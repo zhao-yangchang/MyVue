@@ -10,6 +10,14 @@ console.log([0, 8, 13, 15, -1].find(function (value, index, arr) {
   return value > 9
 }))
 
+console.log([0, 13, 20, -1, -11].findIndex(value => value > 10))
+
+console.log([0, 13, 20, -1, -11].findIndex(function (value, index, obj) {
+  if (value > 15) {
+    return value
+  }
+}))
+
 var date = '2015-03-05 17:59:00.0'
 date = date.substring(0, 19)
 date = date.replace(/-/g, '/') // 必须把日期'-'转为'/'
