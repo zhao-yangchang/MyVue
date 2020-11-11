@@ -86,3 +86,41 @@ function addCalculator (x) {
 var add1 = addCalculator(1)(3)
 console.log(add1) // 2
 
+function getClientTimezone(){
+  var oDate = new Date();
+  var nTimezone = -oDate.getTimezoneOffset() / 60;
+  return nTimezone.toFixed(2);
+}
+
+console.log(getClientTimezone())
+
+var d = new Date();
+console.log(d.getTimezoneOffset())
+console.log(-(-d.getTimezoneOffset()/60).toString());
+
+/**
+ * 7个人最多可以建几个群
+ * @param number
+ */
+function createGroup (number) {
+  if (number.length >= 3) {
+    // 群主不同的情况下
+    console.log('群主不同的情况下:', sum(number.length - 2) * number.length)
+    // 不考虑群主不同的情况下
+    console.log('不考虑群主不同的情况下:', sum(number.length - 2))
+  } else {
+    console.log(0)
+  }
+}
+
+function sum (length) {
+  let sum = 0
+  if (length >= 1) {
+    for (let i = 0; i <= length; i++) {
+      sum += i
+    }
+  }
+  return sum
+}
+
+createGroup([3, 2, 1, 4, 5, 6, 7])
